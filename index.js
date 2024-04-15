@@ -37,9 +37,9 @@ let colorsDiv = document.getElementById("colors");
 let pipActive = false;
 
 const fullname = {
-	focus: "Focus",
-	short: "Short Break",
-	long: "Long Break",
+	focus: "Enfoque",
+	short: "Descanso corto",
+	long: "Descanso largo",
 };
 
 let viewState = "timer";
