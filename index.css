@@ -10,7 +10,7 @@ button, select, input, label {
 }
 
 :root {
-	--bgcolor: #222233;
+	--bgcolor: #111;
 	--bgcolor2: #333344;
 	--color: #ddddff;
 	--coloraccent: #b2b2ff;

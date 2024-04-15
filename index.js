@@ -229,7 +229,7 @@ function notify(title, message) {
 		if (notification) notification.close();
 		notification = new Notification(title, {
 			body: message,
-			icon: "./icons/icon192.png",
+			icon: "./icons/180.png",
 			silent: notificationSilent,
 		});
 	} else if (Notification.permission !== "denied") {
@@ -237,7 +237,7 @@ function notify(title, message) {
 			if (permission === "granted") {
 				notification = new Notification(title, {
 					body: message,
-					icon: "./icons/icon192.png",
+					icon: "./icons/180.png",
 					silent: notificationSilent,
 				});
 			}
