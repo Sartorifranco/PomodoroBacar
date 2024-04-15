@@ -556,7 +556,7 @@ async function getRecords(time) {
 
 function saveRecord(r) {
 	let tr = db.transaction("records", "readwrite").objectStore("records").add(r);
-	tr.onsuccess = () => console.log("Added new record!");
+	tr.onsuccess = () => console.log("Agregado nuevo registro!");
 }
 
 function deleteRecords(task) {
@@ -629,12 +629,12 @@ document.getElementById("backup-restore").addEventListener("change", function ()
 				noTaskManager();
 				console.log(rec, tasks);
 				let tr = db.transaction("records", "readwrite");
-				tr.oncomplete = () => alert("Backup restored successfully!");
+				tr.oncomplete = () => alert("Respaldo restaurado correctamente!");
 				let objstore = tr.objectStore("records");
 				rec.forEach((r) => objstore.add(r));
 			} catch (error) {
 				console.log(error);
-				alert("An error occured! Make sure that you are restoring a valid backup file.");
+				alert("¡Se produjo un error! Asegúrate de estar restaurando un archivo de respaldo válido!");
 			}
 		});
 	}
@@ -707,9 +707,9 @@ function createTaskEl(task) {
 	tdel.title = "Delete this task";
 	tdel.addEventListener("click", () => {
 		let p = confirm(
-			'Are you sure you want to delete the task "' +
+			'¿Estás seguro de que quieres eliminar la tarea? "' +
 				task +
-				'"? All the data related to this task will be deleted.'
+				'"? Todos los datos relacionados con esta tarea serán eliminados.'
 		);
 		if (!p) return;
 		tasks.splice(tasks.indexOf(task), 1);
@@ -786,12 +786,12 @@ document.getElementById("newtask").addEventListener("submit", function (ev) {
 	let formdata = new FormData(this);
 	let tname = formdata.get("taskname").trim();
 	if (tname === "") {
-		alert("Please Enter a Valid Name!");
+		alert("Ingresa un nombre valido porfavor!");
 		this.reset();
 		return;
 	}
 	if (tasks.includes(tname)) {
-		alert("Task already exists!");
+		alert("Esta tarea ya existe!");
 		return;
 	}
 	tasks.push(tname);
@@ -880,7 +880,7 @@ function roundEntryGen(entry) {
 	entryDelete.className = "entry-delete";
 	entryDelete.innerText = "Delete";
 	entryDelete.addEventListener("click", () => {
-		let p = confirm("Are you sure you want to delete this record? This cannot be undone.");
+		let p = confirm("¿Estás seguro de que quieres eliminar este registro? Esta acción no se puede deshacer.");
 		if (!p) return;
 		deleteRecord(entry.d);
 		roundEntry.remove();
@@ -896,23 +896,23 @@ let hourlyFullNames = ["00:00 - 00:06", "06:00 - 12:00", "12:00 - 18:00", "18:00
 
 let hourlyBars = hourlyNames.map((d) => document.getElementById("hourly-" + d));
 
-let dayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+let dayNames = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
 
 let dayBars = dayNames.map((d) => document.getElementById("day-" + d));
 
 let monthNames = [
-	"january",
-	"february",
-	"march",
-	"april",
-	"may",
-	"june",
-	"july",
-	"august",
-	"september",
-	"october",
-	"november",
-	"december",
+	"enero",
+	"febrero",
+	"marzo",
+	"abril",
+	"mayo",
+	"junio",
+	"julio",
+	"agosto",
+	"septiembre",
+	"octubre",
+	"noviembre",
+	"diciembre",
 ];
 
 let monthBars = monthNames.map((d) => document.getElementById("month-" + d));

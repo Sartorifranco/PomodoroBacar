@@ -17,7 +17,7 @@ const contentToCache = [
 ];
 
 self.addEventListener("install", (e) => {
-	console.log("Service Worker installed");
+	console.log("Service Worker instalado");
 	e.waitUntil(
 		(async () => {
 			const cache = await caches.open(cacheName);

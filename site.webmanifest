@@ -1,8 +1,8 @@
 {
-    "name": "Tomodoro",
-    "short_name": "Tomodoro",
+    "name": "Pomodoro Bacar",
+    "short_name": "Pomodoro",
     "start_url": "./index.html",
-    "description": "A pomodoro timer for the web",
+    "description": "Tecnica pomodoro para optimizacion en las tareas",
     "icons": [
         {
             "src": "./icons/icon192.png",
